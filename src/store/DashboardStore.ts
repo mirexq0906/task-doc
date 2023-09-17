@@ -6,19 +6,19 @@ import { documentInterface } from "../interfaces";
 export const useDashboardStore = defineStore("dashboardStore", () => {
   const documentsList: Ref<documentInterface[] | []> = ref([]);
   const isLoader: Ref<boolean> = ref(false);
-  const getDocuments = async (search:string): Promise<void> => {
+  const getDocuments = async (search: string): Promise<void> => {
     try {
       if (search) {
-        isLoader.value = true
-        const response: AxiosResponse<documentInterface[]> = await axios.get(`http://68.183.212.124:3000/user/docs?search=${search}`);
+        isLoader.value = true;
+        const response: AxiosResponse<documentInterface[]> = await axios.get(`${process.env.VUE_APP_API_KEY}/user/docs?search=${search}`);
         documentsList.value = response.data;
-        isLoader.value = false
+        isLoader.value = false;
       } else {
         documentsList.value = [];
       }
     } catch (error) {
-      alert(error)
-      isLoader.value = false
+      alert(error);
+      isLoader.value = false;
     }
   };
   return {

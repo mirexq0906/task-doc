@@ -170,6 +170,7 @@ const props = defineProps({
         color: #6C757D;
         font-size: 14px;
         font-weight: 400;
+        line-height: 120%;
     }
 
     &__empty {

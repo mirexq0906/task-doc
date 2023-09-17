@@ -51,8 +51,7 @@ const setSearch = (search:string): void => {
     }
 
     padding: 40px 0;
-    font-family: 'Montserrat',
-    sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 14px;
     color: #6c757d;
