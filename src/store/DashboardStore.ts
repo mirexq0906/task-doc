@@ -10,7 +10,7 @@ export const useDashboardStore = defineStore("dashboardStore", () => {
     try {
       if (search) {
         isLoader.value = true
-        const response: AxiosResponse<documentInterface[]> = await axios.get(`${process.env.VUE_APP_API_KEY}/user/docs?search=${search}`);
+        const response: AxiosResponse<documentInterface[]> = await axios.get(`http://68.183.212.124:3000/user/docs?search=${search}`);
         documentsList.value = response.data;
         isLoader.value = false
       } else {
